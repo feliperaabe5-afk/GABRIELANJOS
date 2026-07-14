@@ -20,8 +20,8 @@ app = Flask(__name__)
 # DADOS DO PERSONAL TRAINER — edite aqui
 # ---------------------------------------------------------------------------
 
-WHATSAPP_NUMERO = "5541999999999"   # formato: 55 + DDD + número, só dígitos
-DADOS_DE_EXEMPLO = True             # mude para False quando os dados forem reais
+WHATSAPP_NUMERO = "5541991646330"    # formato: 55 + DDD + número, só dígitos
+DADOS_DE_EXEMPLO = False              # e-mail e whatsapp já são reais
 
 TRAINER = {
     "nome": "Gabriel Anjos Rosa",
@@ -31,7 +31,7 @@ TRAINER = {
     "instagram_handle": "gab_anjoss",
     "instagram_url": "https://www.instagram.com/gab_anjoss/",
     "whatsapp_url": f"https://wa.me/{WHATSAPP_NUMERO}",
-    "whatsapp_exibicao": "(41) 9 9999-9999",
+    "whatsapp_exibicao": "(41) 9 9164-6330",
     "email": "contato@gabrielanjos.com",
     "dados_exemplo": DADOS_DE_EXEMPLO,
     "especialidades": [
@@ -102,28 +102,6 @@ SERVICOS = [
     },
 ]
 
-DEPOIMENTOS = [
-    {
-        "nome": "Nome do aluno",
-        "desde": "Aluno(a) desde 20XX",
-        "texto": "Substituir por depoimento real: resultado, tempo de treino e "
-                 "o que mudou na rotina do aluno.",
-    },
-    {
-        "nome": "Nome do aluno",
-        "desde": "Aluno(a) desde 20XX",
-        "texto": "Substituir por depoimento real: resultado, tempo de treino e "
-                 "o que mudou na rotina do aluno.",
-    },
-    {
-        "nome": "Nome do aluno",
-        "desde": "Aluno(a) desde 20XX",
-        "texto": "Substituir por depoimento real: resultado, tempo de treino e "
-                 "o que mudou na rotina do aluno.",
-    },
-]
-
-
 @app.route("/")
 def home():
     return render_template(
@@ -131,10 +109,9 @@ def home():
         trainer=TRAINER,
         metodo=METODO,
         servicos=SERVICOS,
-        depoimentos=DEPOIMENTOS,
         ano_atual=date.today().year,
     )
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5001)
+    app.run(debug=True)

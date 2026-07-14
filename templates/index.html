@@ -17,7 +17,6 @@
       <a href="#sobre">Sobre</a>
       <a href="#metodo">Método</a>
       <a href="#servicos">Serviços</a>
-      <a href="#depoimentos">Resultados</a>
       <a href="#contato" class="nav-cta">Começar agora</a>
     </div>
   </nav>
@@ -54,8 +53,7 @@
 <section class="pad" id="sobre">
   <div class="wrap about-grid">
     <div class="avatar-frame">
-      <span class="mono">{{ trainer.iniciais }}</span>
-      <div class="tag">📍 Substitua por uma foto real de {{ trainer.primeiro_nome }} em ação — treino, avaliação ou bastidor de aula.</div>
+      <img src="{{ url_for('static', filename='img/gabriel-foto.png') }}" alt="{{ trainer.nome }}, personal trainer">
     </div>
     <div class="about-body">
       <p class="eyebrow">Sobre</p>
@@ -116,40 +114,13 @@
   </div>
 </section>
 
-<!-- DEPOIMENTOS -->
-<section class="pad bg-alt" id="depoimentos">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Resultados</p>
-      <h2 class="display">Quem treina,<br>confirma.</h2>
-      <p>Espaço reservado para depoimentos reais de alunos — substitua pelos relatos de {{ trainer.primeiro_nome }}.</p>
-    </div>
-    <div class="testi-grid">
-      {% for depoimento in depoimentos %}
-      <div class="testi-card">
-        <div class="stars">★★★★★</div>
-        <p>"{{ depoimento.texto }}"</p>
-        <div class="testi-who">
-          <div class="testi-avatar"></div>
-          <div><b>{{ depoimento.nome }}</b><span>{{ depoimento.desde }}</span></div>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
 <!-- INSTAGRAM -->
-<section class="pad ig-section">
+<section class="pad bg-alt ig-section">
   <div class="wrap">
     <p class="eyebrow" style="justify-content:center;">Acompanhe o dia a dia</p>
     <h2 class="ig-handle">@<a href="{{ trainer.instagram_url }}" target="_blank" rel="noopener">{{ trainer.instagram_handle }}</a></h2>
-    <div class="ig-grid">
-      {% for _ in range(6) %}
-      <div class="ig-tile"></div>
-      {% endfor %}
-    </div>
-    <div class="ig-cta">
+    <p style="color:var(--muted);margin-top:16px;max-width:420px;margin-left:auto;margin-right:auto;">Bastidores de treino, dicas e resultados dos alunos — tudo por lá.</p>
+    <div class="ig-cta" style="margin-top:32px;">
       <a href="{{ trainer.instagram_url }}" target="_blank" rel="noopener" class="btn btn-primary">Seguir no Instagram</a>
     </div>
   </div>
